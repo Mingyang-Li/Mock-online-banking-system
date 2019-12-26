@@ -1,25 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Navbar</title>
+    <title>JS Bank</title>
+    <link rel="stylesheet" href="jsbank.css">
+    <link rel="icon" href="icon.png">
 </head>
 <body>
     <header>
-        <!--clickable logo-->
-        
-        <li>HOME</li>
-        <li>ABOUT</li>
-        <li>LESSONS</li>
-        <li>SWIM SQUADS</li>
-        <li>PRICING</li>
-        <li>FIND US</li>
-        <li>CONTACT</li>
+        <div class="logo"><img src="logo.png" alt="anz"></div>
+        <div class="buttons">
+            <button>Home</button>
+            <button>Transfer</button>
+            <button>Accounts</button>
+        </div>
     </header>
+
     <main>
-        <!--Background image here-->
+        <div class="space">
+            <div class="placeholder"></div>
+        </div>
+
+        <div id="cheque">
+            <div class="name">
+                Cheque Account
+            </div>
+            <div class="transaction">
+                <button>See Transaction History</button>
+            </div>
+            <div class="balance">
+                Balance
+                <div class="amount">
+                    NZD $1000000
+                </div>
+            </div>
+            
+        </div>
+        <div id="online">
+            <div class="name">
+                Online Account
+            </div>
+            <div class="transaction">
+                <button>See Transaction History</button>
+            </div>
+            <div class="balance">
+                Balance
+                <div class="amount">
+                    NZD $1000000
+                </div>
+            </div>
+        </div>
+        <div id="usd">
+            <div class="name">
+                USD Account
+            </div>
+            <div class="transaction">
+                <button>See Transaction History</button>
+            </div>
+            <div class="balance">
+                Balance
+                <div class="amount">
+                     USD $0
+                </div>
+            </div>
+        </div>
     </main>
 </body>
-</html>

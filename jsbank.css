@@ -1,0 +1,50 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+
+header{
+    width: 100vw;
+}
+
+header img{
+    width: 30vw;
+    height: auto;
+    margin: 0 35vw;
+}
+
+header .buttons{
+    display: inline-grid;
+    grid-template-columns: 33% 33% 33%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: left;
+}
+
+main #cheque,#online,#usd{
+    display: inline-grid;
+    grid-template-columns: 33% 33% 33%;
+    width: 60%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: 0.3px solid grey;
+    text-align: left;
+    padding: 3%;
+    font-size: 3vh;
+}
+
+main .name{
+    color: #0099cc;
+    
+}
+
+main .balance{
+    text-align: right;
+}
+
+main .space{
+    height: 8vh;
+}
+
