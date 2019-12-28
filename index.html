@@ -7,9 +7,8 @@
     <header>
         <div class="logo"><img src="logo.png" alt="anz"></div>
         <div class="buttons">
-            <button>Home</button>
-            <button>Transfer</button>
-            <button>Accounts</button>
+            <div>Home</div>
+            <div>Transfer</div>
         </div>
     </header>
 
@@ -23,11 +22,11 @@
                 Cheque Account
             </div>
             <div class="transaction">
-                <button>See Transaction History</button>
+                <button id = "showtransaction">See Transaction History</button>
             </div>
             <div class="balance">
                 Balance
-                <div class="amount">
+                <div class="amount" id = "chequeBalance">
                     NZD $1000000
                 </div>
             </div>
@@ -38,11 +37,11 @@
                 Online Account
             </div>
             <div class="transaction">
-                <button>See Transaction History</button>
+                <button id = "showtransaction">See Transaction History</button>
             </div>
             <div class="balance">
                 Balance
-                <div class="amount">
+                <div class="amount" id = 'onlineBalance'>
                     NZD $1000000
                 </div>
             </div>
@@ -52,14 +51,36 @@
                 USD Account
             </div>
             <div class="transaction">
-                <button>See Transaction History</button>
+                <button id = "showtransaction">See Transaction History</button>
             </div>
             <div class="balance">
                 Balance
-                <div class="amount">
+                <div class="amount" id = usdBalance>
                      USD $0
                 </div>
             </div>
         </div>
+
+        <h1>Transfer Fund</h1>
+        <div id="transfer">
+            <div id="inputField">
+                <div id="from">
+                    From:
+                    <input type="text">
+                </div>
+                <div id="to">
+                    To:
+                    <input type="text">
+                </div>
+                <div id="amount">
+                    Enter Amount:
+                    <input type="text" placeholder="Please enter an amount">
+                </div>
+            </div>
+            <div id = #button>
+                    Transfer Now
+            </div>
+        </div>
     </main>
+    <script src="jsbank.js"></script>
 </body>
