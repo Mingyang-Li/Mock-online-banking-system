@@ -75,9 +75,9 @@ main #transfer{
     grid-template-columns: 50% 50%;
 }
 
-main #transfer #inputField div{
+main #transfer div{
     display: block;
-    margin: 7% 26%;
+    margin: 0;
 }
 
 main #transfer{
@@ -86,9 +86,22 @@ main #transfer{
     border: 0.5px solid #0099cc;
 }
 
-main #transfer #inputField{
-    border: 0.5px solid #0099cc;
+main #trasnfer #fromDropdown{
+    align-items: center;
 }
-main #transfer #button{
-    border: 0.5px solid #0099cc;
+
+main #trasnfer #toDropdown{
+    align-items: center;
 }
+
+main #trasnfer #fromAcc{
+    display: inline-grid;
+    grid-template-columns: 30% 70%;
+}
+
+main #trasnfer #toAcc{
+    display: inline-grid;
+    grid-template-columns: 30% 70%;
+}
+
+
