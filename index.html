@@ -64,30 +64,30 @@
             <div id="fromAcc">
                 <div id="from">
                     From:
-                </div>
-                <div id="fromDropdown">
-                    <input type="text">
-                    <div class="cheque">Cheque Account</div>
-                    <div class="online">Online Account</div>
-                    <div class="usd">USD Account</div>
+                    <select class="fromDropdown" id="fromDropdown">
+                        <option>choose an acc</option>
+                        <option>cheque</option>
+                        <option>online</option>
+                        <option>usd</option>
+                    </select>
                 </div>
             </div>
             
             <div id="toAcc">
                 <div id="to">
                     To:
-                </div>
-                <div id="toDropdown">
-                    <input type="text">
-                    <div class="cheque">Cheque Account</div>
-                    <div class="online">Online Account</div>
-                    <div class="usd">USD Account</div>
+                    <select class="toDropdown" id="toDropdown">
+                        <option>choose an acc</option>
+                        <option>cheque</option>
+                        <option>online</option>
+                        <option>usd</option>
+                    </select>
                 </div>
             </div>
 
             <div id="amount">
                 Enter Amount:
-                <input type="text" placeholder="Please enter an amount">
+                <input type="number" placeholder="Please enter an amount">
             </div>
             
             <div id = #initiateTransfer onclick = "transfer()">
@@ -95,5 +95,9 @@
             </div>
         </div>
     </main>
+    
+
+
+
     <script src="jsbank.js"></script>
 </body>

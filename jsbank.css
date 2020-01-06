@@ -86,12 +86,26 @@ main #transfer{
     border: 0.5px solid #0099cc;
 }
 
-main #trasnfer #fromDropdown{
-    align-items: center;
+main #from,#to{
+    margin: 20% 0;
+    padding: 10%;
+    font-size: 3vh;
 }
 
-main #trasnfer #toDropdown{
-    align-items: center;
+#from select{
+    height: 3vh;
+}
+
+#to select{
+    height: 3vh;
+}
+
+.fromDropdown option{
+    font-size: 2vh;
+}
+
+.toDropdown option{
+    font-size: 2vh;
 }
 
 main #trasnfer #fromAcc{
@@ -104,4 +118,14 @@ main #trasnfer #toAcc{
     grid-template-columns: 30% 70%;
 }
 
+#amount{
+    text-align: center;
+    margin: 20% 0;
+    padding: 10%;
+    font-size: 3vh;
+}
+
+#amount input{
+    height: 3vh;
+}
 
