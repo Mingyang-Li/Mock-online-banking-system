@@ -19,7 +19,8 @@ chequeBalance = parseFloat(chequeBalance);
 onlineBalance = parseFloat(onlineBalance);
 usdBalance = parseFloat(usdBalance);
 
-//function for compounding interest, loop again once any of the balance reached $10,000,000
+//function for compounding interest, loop again once any 
+//of the balance reached $10,000,000
 function compoundInterest(chqBal, onlBal, chqStr, onlStr){
     while (chqBal < 10000000 && onlBal < 1000000){
         chqBal = chqBal * 1.02;
@@ -37,21 +38,61 @@ setTimeout(compoundInterest(chequeBalance, onlineBalance, chequeStr, onlineStr, 
 
 //function for money transfer
 function transfer(){
-    let date = new Date();
+    let newDate = new Date();
     let usdToNzd = 1.5;
     let nzdToUsd = 0.67;
-    let amount = parseFloat(input.innerHTML);
-    let fromAcc = fromField.innerHTML;
-    let toAcc = toField.innerHTML;
+    let amountInput = document.getElementById("amtToTransfer").value;
+    let amount = parseFloat(amountInput);
+
+    var fromAcc = "";
+    var fromAcs = document.getElementById("fromDropdown");
+    while (fromAcc === ""){
+        if (fromAcs.value == "Cheque"){
+            fromAcc = "cheque";
+        }
+        else if (fromAcs.value == "Online"){
+            fromAcc = "online";
+        }
+        else if (fromAcs.value == "USD"){
+            fromAcc = "usd";
+        }
+        else {
+            alert("Please select an account to transfer from.")
+        }
+    }
+
+    var toAcc = "";
+    var toAcs = document.getElementById("toDropdown");
+    while (toAcs === ""){
+        if (toAcs.value == "Cheque"){
+            toAcc = "cheque";
+        } else if (toAcs.value == "Online"){
+            toAcc = "online";
+        } else if (fromAtoAcscs.value == "USD"){
+            toAcc = "usd";
+        } else {
+            alert("Please select an account to transfer money to!")
+        }
+    }
+    
+
     while (fromAcc === "cheque"){
         if (toAcc == "online"){
+            //change cheque acc balance 
             chequeBalance -= amount; 
+            //change cheque acc STRING balance
+            var dollarIndex = chequeStr.lastIndexOf("$");
+            chequeStr = chequeStr.slice(0, dollarIndex + 1) + chequeBalance;
+            //change online acc balance
             onlineBalance += amount;
+            //change online acc STRING balance
+            dollarIndex = onlineStr.lastIndexOf("$");
+            onlineStr = onlineStr.slice(0, dollarIndex + 1) + onlineBalance;
         }
         else if (toAcc == "usd"){
-            let conversionFee = chequeBalance * 0.04;
+            var conversionFee = chequeBalance * 0.04;
             chequeBalance -= conversionFee;
-            let convertedUsd = chequeBalance * nzdToUsd;
+            var convertedUsd = chequeBalance * nzdToUsd;
             usdBalance += convertedUsd;
         }
         break;
@@ -85,21 +126,18 @@ function transfer(){
         }
         break;
     }
-    if (fromAcc === toAcc){
-        alert("You need to transfer fund to a different account!")
-    }
-    if (fromAcc === ""){
-        alert("Please select an account to transfer funds from")
-    }
-    if (toAcc === ""){
-        alert("Please select an account to deposit funds")
-    }
-    if (amount === ""){
-        alert("Please enter an amount")
-    }
-    if (amount === NaN){
-        alert("Please enter a valid amount")
+
+    while (true){
+        if (fromAcc === toAcc){
+            alert("You need to transfer fund to a different account!");
+            break;
+        }
+        if (amount === ""){
+            alert("Please enter an amount");
+            break;
+        }
     }
 }
 
-//function for 
+//add transaction processing animation after clicking transfer
+

@@ -129,3 +129,10 @@ main #trasnfer #toAcc{
     height: 3vh;
 }
 
+#transfer #initiateTransfer{
+    color: pink;
+    border: 0.5px solid red;
+    margin: 20px;
+    padding: 0;
+    font-size: auto;
+}

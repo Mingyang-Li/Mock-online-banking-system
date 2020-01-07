@@ -65,10 +65,10 @@
                 <div id="from">
                     From:
                     <select class="fromDropdown" id="fromDropdown">
-                        <option>choose an acc</option>
-                        <option>cheque</option>
-                        <option>online</option>
-                        <option>usd</option>
+                        <option>Choose An Account</option>
+                        <option class = "cheque">Cheque</option>
+                        <option class = "online">Online</option>
+                        <option class = "usd">USD</option>
                     </select>
                 </div>
             </div>
@@ -77,22 +77,22 @@
                 <div id="to">
                     To:
                     <select class="toDropdown" id="toDropdown">
-                        <option>choose an acc</option>
-                        <option>cheque</option>
-                        <option>online</option>
-                        <option>usd</option>
+                        <option>Choose An Account</option>
+                        <option class = "cheque">Cheque</option>
+                        <option class = "online">Online</option>
+                        <option class = "usd">USD</option>
                     </select>
                 </div>
             </div>
 
             <div id="amount">
                 Enter Amount:
-                <input type="number" placeholder="Please enter an amount">
+                <input id = "amtToTransfer" type="number" placeholder="Please enter an amount" value = "">
             </div>
             
-            <div id = #initiateTransfer onclick = "transfer()">
+            <button id = #initiateTransfer onclick = "transfer()">
                     Transfer Now
-            </div>
+            </button>
         </div>
     </main>
     
