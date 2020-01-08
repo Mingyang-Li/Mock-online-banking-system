@@ -36,16 +36,32 @@ function compoundInterest(chqBal, onlBal, chqStr, onlStr){
 //the chq&online balance compounds every 1000ms by calling the compound interest function
 setTimeout(compoundInterest(chequeBalance, onlineBalance, chequeStr, onlineStr, 1000));
 
-//function for money transfer
-function transfer(){
-    let newDate = new Date();
-    let usdToNzd = 1.5;
-    let nzdToUsd = 0.67;
-    let amountInput = document.getElementById("amtToTransfer").value;
-    let amount = parseFloat(amountInput);
 
-    var fromAcc = "";
-    var fromAcs = document.getElementById("fromDropdown");
+//define variables for transaction
+var usdToNzd = 1.5;
+var nzdToUsd = 0.67;
+
+var amountInput = document.getElementById("amtToTransfer").value;
+var amount = parseInt(amountInput);
+var transferButton = document.getElementById("#initiateTransfer");
+transferButton.addEventListener("click", function(){
+    alert(typeof(amount) + " is " + amount);
+}); 
+
+
+
+
+
+while (amountInput != ""){
+    var amount = parseFloat(amountInput);
+    alert(amount);
+};
+
+
+
+var fromAcc = "";
+var fromAcs = document.getElementById("fromDropdown");
+function selectFromAcc(){
     while (fromAcc === ""){
         if (fromAcs.value == "Cheque"){
             fromAcc = "cheque";
@@ -56,13 +72,17 @@ function transfer(){
         else if (fromAcs.value == "USD"){
             fromAcc = "usd";
         }
-        else {
-            alert("Please select an account to transfer from.")
-        }
+        
     }
+}
+//fire event listener once the 'from account'
+//is clicked
+fromAcs.addEventListener("click", selectFromAcc());
 
-    var toAcc = "";
-    var toAcs = document.getElementById("toDropdown");
+
+var toAcc = "";
+var toAcs = document.getElementById("toDropdown");
+function selectToAcc(){
     while (toAcs === ""){
         if (toAcs.value == "Cheque"){
             toAcc = "cheque";
@@ -70,12 +90,18 @@ function transfer(){
             toAcc = "online";
         } else if (fromAtoAcscs.value == "USD"){
             toAcc = "usd";
-        } else {
-            alert("Please select an account to transfer money to!")
-        }
+        } 
     }
-    
+}
+//fire event listener once the 'to account'
+//is clicked
+toAcs.addEventListener("click", selectToAcc());
 
+
+//function for money transfer
+function transfer(){
+    //set new date&time for each transaction
+    var newDate = new Date();
     while (fromAcc === "cheque"){
         if (toAcc == "online"){
             //change cheque acc balance 
@@ -140,4 +166,4 @@ function transfer(){
 }
 
 //add transaction processing animation after clicking transfer
-
+// 
